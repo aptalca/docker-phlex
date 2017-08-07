@@ -6,6 +6,11 @@ ARG BUILD_DATE
 ARG VERSION
 LABEL build_version="Digitalhigh version:- ${VERSION} Build-date:- ${BUILD_DATE}"
 
+# add packages
+RUN \
+ apk add --no-cache \
+	iptables
+
 # add local files, set custom NGINX directory
 COPY root/ /
 
